@@ -58,14 +58,14 @@ export default {
     methods: {
         move(e, idx) {
             this.currentMovieData = {}
-            axios.get(`http://www.omdbapi.com/?i=${this.movies[idx].imdbID}&apikey=c9c6179b`)
+            axios.get(`https://www.omdbapi.com/?i=${this.movies[idx].imdbID}&apikey=c9c6179b`)
                 .then(response => {
                     if (response.data.Response == 'True') this.currentMovieData = response.data
                 })
         },
         fetchMovies() {
             this.loading = true
-            axios.get(`http://www.omdbapi.com/?s=${this.query}&page=${this.currentPage}&apikey=c9c6179b`)
+            axios.get(`https://www.omdbapi.com/?s=${this.query}&page=${this.currentPage}&apikey=c9c6179b`)
                 .then(response => {
                     this.loading = false
                     if (response.data.Response == 'False') this.noResult = true
