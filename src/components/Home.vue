@@ -1,9 +1,9 @@
 <template>
     <div class="home">
-        <form class="search-form">
+        <form class="search-form" @submit.prevent="formSubmit">
             <div class="search-block">
                 <img src="../assets/search.png" width="30" height="30" />
-                <input class="search" type="text" placeholder="Search movies">
+                <input class="search" type="text" placeholder="Search movies" v-model="searchValue">
             </div>
             <button class="search-button">Find</button>
         </form>
@@ -12,24 +12,46 @@
 
 <script>
 export default {
-    name: 'Home'
+    name: 'Home',
+    data() {
+        return {
+            searchValue: ''
+        }
+    },
+    methods: {
+        formSubmit() {
+            if (this.searchValue != '') {
+                this.$router.push({ name: 'Results', params: { query: this.searchValue } })
+            }
+        }
+    }
 }
 </script>
 
 <style scoped>
+.home {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .search-form {
+    width: 100%;
+    max-width: 500px;
     display: flex;
 }
 .search-block {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    flex: 1 1;
     padding: 15px 18px;
     color: white;
     background-color: #3d4adc;
     border-radius: 10px;
 }
 input.search {
+    width: 100%;
     color: white;
     font-size: 1.5rem;
     background: transparent;
@@ -62,9 +84,13 @@ input.search::placeholder {
     font-family: 'Montserrat', sans-serif;
     margin-left: 10px;
     cursor: pointer;
+    transition: background-color .3s;
 
     -webkit-appearance: none;
     -moz-appearance: none;
+}
+.search-button:focus {
+    outline: none;
 }
 .search-button:hover {
     background-color: #48A9A6;

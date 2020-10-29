@@ -41,10 +41,11 @@ nav a {
     margin-top: 10px;
 }
 main {
-    height: calc(100vh - 70px);
+    height: calc(100vh - 110px);
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: #303cba;
+    padding: 20px;
 }
 </style>
