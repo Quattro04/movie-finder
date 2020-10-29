@@ -17,7 +17,7 @@ const routes = [
 
 const router = createRouter({
     history: createWebHistory(),
-    base: process.env.VUE_APP_MODE === 'production' ? '/' : '/movie-finder/',
+    base: '/movie-finder/',
     routes,
 });
 
