@@ -1,24 +1,9 @@
 # movie-finder
 
-## Project setup
-```
-npm install
-```
+This is a simple web application for searching movies by title.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+It's made with Vue.js and vue-router.
 
-### Compiles and minifies for production
-```
-npm run build
-```
+For fetching movie details with omdbapi, I used axios.
 
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+For displaying movie results in a slider, I used vue-splide.

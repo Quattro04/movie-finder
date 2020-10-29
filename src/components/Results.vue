@@ -72,7 +72,7 @@ export default {
                     else {
                         this.movies = response.data.Search
                         this.allPages = Math.ceil(response.data.totalResults / 10)
-                        axios.get(`http://www.omdbapi.com/?i=${this.movies[0].imdbID}&apikey=c9c6179b`)
+                        axios.get(`https://www.omdbapi.com/?i=${this.movies[0].imdbID}&apikey=c9c6179b`)
                             .then(response => {
                                 if (response.data.Response == 'True') this.currentMovieData = response.data
                             })
