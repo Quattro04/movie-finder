@@ -1,7 +1,7 @@
 <template>
     <div>
         <nav>
-            <router-link to="/">movie finder</router-link>
+            <router-link to="/movie-finder/">movie finder</router-link>
         </nav>
         <main>
             <router-view />

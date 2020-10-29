@@ -4,12 +4,12 @@ import Results from "@/components/Results.vue";
 
 const routes = [
     {
-        path: "/",
+        path: "/movie-finder/",
         name: "Home",
         component: Home,
     },
     {
-        path: "/results/:query",
+        path: "/movie-finder/results/:query",
         name: "Results",
         component: Results,
     },
